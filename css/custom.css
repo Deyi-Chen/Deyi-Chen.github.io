@@ -1,0 +1,27 @@
+.article-entry {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+
+pre, code {
+  background: #ffffff !important;
+  color: #24292e !important;
+  font-family: "Fira Code", monospace;
+}
+
+pre {
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 12px;
+  overflow-x: auto;
+}
+
+code {
+  background: transparent !important;
+}
+
+.hljs {
+  background: #ffffff !important;
+  color: #24292e;
+}
