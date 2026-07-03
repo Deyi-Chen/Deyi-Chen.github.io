@@ -32,7 +32,119 @@
   
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
 
-<meta name="generator" content="Hexo 8.1.2"></head>
+<meta name="generator" content="Hexo 8.1.2"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
 
 
   <script>
@@ -63,7 +175,9 @@
         
           <a class="main-nav-link" href="/">Home</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a class="main-nav-link" href="/archives/">Archives</a>
+        
+          <a class="main-nav-link" href="/categories/renderer/">Renderer</a>
         
       </nav>
       <nav id="sub-nav">
@@ -83,12 +197,65 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Implementation notes of volume rendering" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/07/01/Implementation%20notes%20of%20volume%20rendering/" class="article-date">
+  <time class="dt-published" datetime="2026-07-01T00:00:00.000Z" itemprop="datePublished">2026-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/renderer/">Renderer</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/07/01/Implementation%20notes%20of%20volume%20rendering/">Implementation notes of volume rendering</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>This post documents the implementation of a volume renderer, including ray marching, voxel based SDF construction. </p>
+        
+          <p class="article-more-link">
+            <a href="/2026/07/01/Implementation%20notes%20of%20volume%20rendering/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/07/01/Implementation%20notes%20of%20volume%20rendering/" data-id="cuidAZ7E67bJF-3qQMNHqwCRn" data-title="Implementation notes of volume rendering" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ray-Marching/" rel="tag">Ray Marching</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Voxelization/" rel="tag">Voxelization</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Implementation notes of a CPU ray tracer" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2026/06/01/Implementation%20notes%20of%20a%20CPU%20ray%20tracer/" class="article-date">
-  <time class="dt-published" datetime="2026-06-01T00:00:00.000Z" itemprop="datePublished">2026-06-01</time>
+  <time class="dt-published" datetime="2026-05-31T16:00:00.000Z" itemprop="datePublished">2026-06-01</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/renderer/">Renderer</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -105,101 +272,21 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="Final-Renderings"><a href="#Final-Renderings" class="headerlink" title="Final Renderings"></a>Final Renderings</h2><h3 id="Random-Sphere-Scene"><a href="#Random-Sphere-Scene" class="headerlink" title="Random Sphere Scene"></a>Random Sphere Scene</h3><p><img src="/images/random_spheres.png" alt="Random Spheres"></p>
-<h3 id="Stanford-Bunny"><a href="#Stanford-Bunny" class="headerlink" title="Stanford Bunny"></a>Stanford Bunny</h3><p><img src="/images/bunny_normal.png" alt="Stanford Bunny"></p>
-<h2 id="Architecture-Overview"><a href="#Architecture-Overview" class="headerlink" title="Architecture Overview"></a>Architecture Overview</h2><p align="center">
-  <img src="/images/render_loop_detailed_white.png" alt="Rendering pipeline" width="320">
-</p>
-
-<h3 id="Core-Components"><a href="#Core-Components" class="headerlink" title="Core Components"></a>Core Components</h3><p>The renderer is built upon a list of abstractions that separate ray generation, geometry represenation, material interaction, and acceleration structure. </p>
-<table>
-<thead>
-<tr>
-<th>Component</th>
-<th>Role</th>
-<th>Entry Point</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><code>camera</code></td>
-<td>Generates rays and drives the parallel render loop</td>
-<td><code>render(world)</code></td>
-</tr>
-<tr>
-<td><code>hittable</code></td>
-<td>Abstract base for anything a ray can intersect</td>
-<td><code>hit()</code>, <code>bounding_box()</code></td>
-</tr>
-<tr>
-<td><code>Sphere</code>, <code>triangle</code></td>
-<td>Concrete geometric implementation of <code>hittable</code></td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>hittable_list</code></td>
-<td>Holds the scene’s objects; is a <code>hittable</code></td>
-<td><code>hit()</code></td>
-</tr>
-<tr>
-<td><code>material</code></td>
-<td>Abstract base for surface response</td>
-<td><code>scatter()</code></td>
-</tr>
-<tr>
-<td><code>lambertian</code>, <code>metal</code>, <code>dielectric</code></td>
-<td>Diffuse, reflective, and refractive surfaces implementation</td>
-<td>—</td>
-</tr>
-<tr>
-<td><code>bvh_node</code>, <code>aabb</code></td>
-<td>Bounding-volume hierarchy for fast intersection</td>
-<td><code>hit()</code></td>
-</tr>
-<tr>
-<td><code>vec3</code>, <code>Ray</code>, <code>color</code></td>
-<td>Math primitives</td>
-<td>—</td>
-</tr>
-</tbody></table>
-<hr>
-<h2 id="Rendering-equation"><a href="#Rendering-equation" class="headerlink" title="Rendering equation"></a>Rendering equation</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">color <span class="title">camera::ray_color</span><span class="params">(<span class="type">const</span> Ray &amp;r, <span class="type">const</span> hittable &amp;world, <span class="type">int</span> depth)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    hit_record rec;</span><br><span class="line">    <span class="keyword">if</span> (depth == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">color</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (world.<span class="built_in">hit</span>(r, <span class="number">0.001</span>, infinity, rec)) <span class="comment">//returns true if the ray hits an object</span></span><br><span class="line">    &#123;</span><br><span class="line">        Ray scattered;</span><br><span class="line">        color attenuation;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (rec.mat-&gt;<span class="built_in">scatter</span>(r, rec, attenuation, scattered))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> attenuation * <span class="built_in">ray_color</span>(scattered, world, depth - <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">color</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>); <span class="comment">//if the scatter function of the material returns false, return black</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// sky:the default color of a ray, when it doesn&#x27;t hit anything</span></span><br><span class="line">    vec3 unit_dir = <span class="built_in">unit_vector</span>(r.direction);</span><br><span class="line">    <span class="type">double</span> a = <span class="number">0.5</span> * (unit_dir.<span class="built_in">y</span>() + <span class="number">1.0</span>);</span><br><span class="line">    <span class="keyword">return</span> (<span class="number">1.0</span> - a) * <span class="built_in">color</span>(<span class="number">1.0</span>, <span class="number">1.0</span>, <span class="number">1.0</span>) + a * <span class="built_in">color</span>(<span class="number">0.5</span>, <span class="number">0.7</span>, <span class="number">1.0</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>When a ray hits a material and scatters:</p>
-<p>$$<br>L_o &#x3D; T \cdot L_i<br>$$</p>
-<p>Where:</p>
-<ul>
-<li>$L_o$: outgoing radiance  </li>
-<li>$L_i$: incoming radiance  </li>
-<li>$T$: attenuation (material reflectance)</li>
-</ul>
-<p>Here, a recursive structure is used. In particular, the equation is the attenuation (put simply, a property of the material acting as an RGB “filter” on a ray) multiplied by the color of the scattered ray. As we learned in junior high physics, the “color” of an object is created due to the reflection of sunlight, and since the ray path is invertible, we can also trace it using this model.</p>
-<h2 id="Polymorphism-of-hittable-and-materials"><a href="#Polymorphism-of-hittable-and-materials" class="headerlink" title="Polymorphism of hittable and materials"></a>Polymorphism of hittable and materials</h2><p>Definition: Polymorphism allows a base-class pointer to refer to an object of any derived type, so that the same function call automatically will lead to different behavior at runtime, depending on the actual type of the object being referred to.</p>
-<p>Here are a few examples of polymorphism in the ray tracer</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (world.<span class="built_in">hit</span>(r, <span class="number">0.001</span>, infinity, rec))   <span class="comment">// world&#x27;s class is hittable list </span></span><br></pre></td></tr></table></figure>
-<p>And the hit function of world itself has the following form</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hittable_list::hit</span></span><br><span class="line"><span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span> &amp;obj : objects) &#123;</span><br><span class="line">    <span class="keyword">if</span> (obj-&gt;<span class="built_in">hit</span>(r, t_min, <span class="type">closest_t</span>, temp)) &#123; ... &#125;   <span class="comment">// obj has the type of shared_ptr&lt;hittable&gt;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>Specifically, <code>obj-&gt;hit(r, t_min, closest_t, temp)</code> runs different code depending on what obj actually is at runtime: a bvh_node, Sphere, or triangle, though the call site only ever sees the hittable interface.</p>
-<p>Another example is about the scattering of materials</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (rec.mat-&gt;<span class="built_in">scatter</span>(r, rec, attenuation, scattered))   <span class="comment">// rec.mat has the type of shared_ptr&lt;material&gt;</span></span><br></pre></td></tr></table></figure>
-<p>And the specific material implementations (i.e. lambertian, metal, and dielectric) are implemented in material.h. </p>
-<h2 id="BVH-acceleration"><a href="#BVH-acceleration" class="headerlink" title="BVH acceleration"></a>BVH acceleration</h2><p>In the old version where we don’t have the BVH, the call <code>world.hit</code> (<code>hittable_list::hit</code>) traverses every object in the scene:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="type">const</span> <span class="keyword">auto</span> &amp;obj : objects) &#123;   <span class="comment">// objects[0], objects[1], ... object[n] are all tested</span></span><br><span class="line">    <span class="keyword">if</span> (obj-&gt;<span class="built_in">hit</span>(r, t_min, <span class="type">closest_t</span>, temp)) &#123; ... &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>This costs <code>O(N)</code> per ray, and the loop must check every object to make sure no closer one exists. This is far too slow for a mesh like the Stanford Bunny with tens of thousands of triangles.</p>
-<p>With the bounding volume hierarchy (BVH), the scene is organized into a binary tree of axis-aligned bounding boxes (AABBs). If a ray misses a node’s box, then every triangle or sphere inside that box is excluded at once — the whole subtree is skipped. As a result, each ray only tests the regions it actually passes through:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">bool</span> hit_left  = left-&gt;<span class="built_in">hit</span>(r, t_min, t_max, rec);</span><br><span class="line"><span class="type">bool</span> hit_right = right-&gt;<span class="built_in">hit</span>(r, t_min, hit_left ? rec.t : t_max, rec);</span><br><span class="line"><span class="keyword">return</span> hit_left || hit_right;</span><br></pre></td></tr></table></figure>
-
-<p>Two things happen here. First, both children are tested, because a single ray can pass through both boxes; it keeps traversing until it reaches the leaves and finds the closest hit. Second, note the <code>hit_left ? rec.t : t_max</code> in the right call: once the left side has a hit, the right side is searched only for something closer than that hit, by reducing <code>t_max</code> to <code>rec.t</code>. This keeps <code>rec</code> holding the nearest intersection and prunes away farther boxes for free.</p>
-<p>Overall, instead of testing all <code>N</code> objects, a ray walks down the tree, rejecting whole subtrees with cheap box tests and doing real triangle intersection only in the few leaves it reaches — bringing the per-ray cost from <code>O(N)</code> down to roughly <code>O(log N)</code>.</p>
-
+        <p>An implementation walkthrough of a CPU path tracer, from recursive ray scattering and polymorphic scene design to BVH acceleration and final renderings.</p>
+        
+          <p class="article-more-link">
+            <a href="/2026/06/01/Implementation%20notes%20of%20a%20CPU%20ray%20tracer/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/06/01/Implementation%20notes%20of%20a%20CPU%20ray%20tracer/" data-id="cuidjCgy_lHvlKeTs6GlQkKDX" data-title="Implementation notes of a CPU ray tracer" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/06/01/Implementation%20notes%20of%20a%20CPU%20ray%20tracer/" data-id="cuidtCIRZJo_-w9frUFIs-KZQ" data-title="Implementation notes of a CPU ray tracer" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CPU-Rendering/" rel="tag">CPU Rendering</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ray-Tracing/" rel="tag">Ray Tracing</a></li></ul>
+
     </footer>
   </div>
   
@@ -215,18 +302,39 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/renderer/">Renderer</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CPU-Rendering/" rel="tag">CPU Rendering</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ray-Marching/" rel="tag">Ray Marching</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ray-Tracing/" rel="tag">Ray Tracing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Voxelization/" rel="tag">Voxelization</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CPU-Rendering/" style="font-size: 10px;">CPU Rendering</a> <a href="/tags/Ray-Marching/" style="font-size: 10px;">Ray Marching</a> <a href="/tags/Ray-Tracing/" style="font-size: 10px;">Ray Tracing</a> <a href="/tags/Voxelization/" style="font-size: 10px;">Voxelization</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">July 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li></ul>
     </div>
   </div>
 
@@ -237,6 +345,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2026/07/01/Implementation%20notes%20of%20volume%20rendering/">Implementation notes of volume rendering</a>
+          </li>
         
           <li>
             <a href="/2026/06/01/Implementation%20notes%20of%20a%20CPU%20ray%20tracer/">Implementation notes of a CPU ray tracer</a>
@@ -266,7 +378,9 @@
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="/archives/" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories/renderer/" class="mobile-nav-link">Renderer</a>
   
 </nav>
     

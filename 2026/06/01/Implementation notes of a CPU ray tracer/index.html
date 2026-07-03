@@ -7,19 +7,21 @@
   
   <title>Implementation notes of a CPU ray tracer | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Final RenderingsRandom Sphere Scene Stanford Bunny Architecture Overview      Core ComponentsThe renderer is built upon a list of abstractions that separate ray generation, geometry represenation, mat">
+  <meta name="description" content="An implementation walkthrough of a CPU path tracer, from recursive ray scattering and polymorphic scene design to BVH acceleration and final renderings.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Implementation notes of a CPU ray tracer">
 <meta property="og:url" content="http://example.com/2026/06/01/Implementation%20notes%20of%20a%20CPU%20ray%20tracer/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Final RenderingsRandom Sphere Scene Stanford Bunny Architecture Overview      Core ComponentsThe renderer is built upon a list of abstractions that separate ray generation, geometry represenation, mat">
+<meta property="og:description" content="An implementation walkthrough of a CPU path tracer, from recursive ray scattering and polymorphic scene design to BVH acceleration and final renderings.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/random_spheres.png">
 <meta property="og:image" content="http://example.com/images/bunny_normal.png">
 <meta property="og:image" content="http://example.com/images/render_loop_detailed_white.png">
-<meta property="article:published_time" content="2026-06-01T00:00:00.000Z">
-<meta property="article:modified_time" content="2026-06-13T13:55:42.642Z">
+<meta property="article:published_time" content="2026-05-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-07-03T04:08:19.672Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="CPU Rendering">
+<meta property="article:tag" content="Ray Tracing">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/random_spheres.png">
   
@@ -71,7 +73,9 @@
         
           <a class="main-nav-link" href="/">Home</a>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
+          <a class="main-nav-link" href="/archives/">Archives</a>
+        
+          <a class="main-nav-link" href="/categories/renderer/">Renderer</a>
         
       </nav>
       <nav id="sub-nav">
@@ -92,9 +96,13 @@
         <section id="main"><article id="post-Implementation notes of a CPU ray tracer" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2026/06/01/Implementation%20notes%20of%20a%20CPU%20ray%20tracer/" class="article-date">
-  <time class="dt-published" datetime="2026-06-01T00:00:00.000Z" itemprop="datePublished">2026-06-01</time>
+  <time class="dt-published" datetime="2026-05-31T16:00:00.000Z" itemprop="datePublished">2026-06-01</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/renderer/">Renderer</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -111,7 +119,9 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <h2 id="Final-Renderings"><a href="#Final-Renderings" class="headerlink" title="Final Renderings"></a>Final Renderings</h2><h3 id="Random-Sphere-Scene"><a href="#Random-Sphere-Scene" class="headerlink" title="Random Sphere Scene"></a>Random Sphere Scene</h3><p><img src="/images/random_spheres.png" alt="Random Spheres"></p>
+        <p>An implementation walkthrough of a CPU path tracer, from recursive ray scattering and polymorphic scene design to BVH acceleration and final renderings.</p>
+<span id="more"></span>
+<h2 id="Final-Renderings"><a href="#Final-Renderings" class="headerlink" title="Final Renderings"></a>Final Renderings</h2><h3 id="Random-Sphere-Scene"><a href="#Random-Sphere-Scene" class="headerlink" title="Random Sphere Scene"></a>Random Sphere Scene</h3><p><img src="/images/random_spheres.png" alt="Random Spheres"></p>
 <h3 id="Stanford-Bunny"><a href="#Stanford-Bunny" class="headerlink" title="Stanford Bunny"></a>Stanford Bunny</h3><p><img src="/images/bunny_normal.png" alt="Stanford Bunny"></p>
 <h2 id="Architecture-Overview"><a href="#Architecture-Overview" class="headerlink" title="Architecture Overview"></a>Architecture Overview</h2><p align="center">
   <img src="/images/render_loop_detailed_white.png" alt="Rendering pipeline" width="320">
@@ -202,14 +212,30 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2026/06/01/Implementation%20notes%20of%20a%20CPU%20ray%20tracer/" data-id="cuidjCgy_lHvlKeTs6GlQkKDX" data-title="Implementation notes of a CPU ray tracer" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      <a data-url="http://example.com/2026/06/01/Implementation%20notes%20of%20a%20CPU%20ray%20tracer/" data-id="cuidtCIRZJo_-w9frUFIs-KZQ" data-title="Implementation notes of a CPU ray tracer" class="article-share-link"><span class="fa fa-share">Share</span></a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CPU-Rendering/" rel="tag">CPU Rendering</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ray-Tracing/" rel="tag">Ray Tracing</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2026/07/01/Implementation%20notes%20of%20volume%20rendering/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Implementation notes of volume rendering
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
@@ -219,18 +245,39 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/renderer/">Renderer</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/CPU-Rendering/" rel="tag">CPU Rendering</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ray-Marching/" rel="tag">Ray Marching</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ray-Tracing/" rel="tag">Ray Tracing</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Voxelization/" rel="tag">Voxelization</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/CPU-Rendering/" style="font-size: 10px;">CPU Rendering</a> <a href="/tags/Ray-Marching/" style="font-size: 10px;">Ray Marching</a> <a href="/tags/Ray-Tracing/" style="font-size: 10px;">Ray Tracing</a> <a href="/tags/Voxelization/" style="font-size: 10px;">Voxelization</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/07/">July 2026</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2026/06/">June 2026</a></li></ul>
     </div>
   </div>
 
@@ -241,6 +288,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2026/07/01/Implementation%20notes%20of%20volume%20rendering/">Implementation notes of volume rendering</a>
+          </li>
         
           <li>
             <a href="/2026/06/01/Implementation%20notes%20of%20a%20CPU%20ray%20tracer/">Implementation notes of a CPU ray tracer</a>
@@ -270,7 +321,9 @@
   
     <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <a href="/archives/" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories/renderer/" class="mobile-nav-link">Renderer</a>
   
 </nav>
     
